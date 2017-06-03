@@ -34,8 +34,8 @@ export const passwordChanged = password => ({
   payload: password,
 });
 
-export const loginUser = ({ email, password }) => {
-  return (dispatch) => {
+export const loginUser = ({ email, password }) => (
+  (dispatch) => {
     dispatch({ type: LOGIN_USER });
 
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -45,5 +45,5 @@ export const loginUser = ({ email, password }) => {
       .then(user => loginUserSuccess(dispatch, user))
       .catch(() => loginUserFail(dispatch));
     });
-  };
-};
+  }
+);
