@@ -18,7 +18,7 @@ class EmployeeListItem extends Component {
   }
 
   onRowPress() {
-    Actions.employeeCreate({ employee: this.props.employee });
+    Actions.employeeEdit({ employee: this.props.employee });
   }
 
   render() {
@@ -41,6 +41,8 @@ class EmployeeListItem extends Component {
 EmployeeListItem.propTypes = {
   employee: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    shift: PropTypes.string.isRequired,
   }).isRequired,
 };
 
